@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Startup News</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="src/app.css">
+    <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-10/esl.js"></script>
+
+    <script>
+    require.config({
+        baseUrl: 'src',
+        paths: {},
+        packages: [
+            {
+                name: 'saber-firework',
+                location: '../dep/saber-firework/0.2.0/src'
+            },
+            {
+                name: 'etpl',
+                location: '../dep/etpl/2.1.0/src',
+                main: 'main'
+            },
+            {
+                name: 'hammer',
+                location: '../dep/hammer/1.0.10/src',
+                main: 'hammer'
+            },
+            {
+                name: 'saber-viewport',
+                location: '../dep/saber-viewport/0.2.6/src',
+                main: 'main'
+            },
+            {
+                name: 'saber-lang',
+                location: '../dep/saber-lang/0.3.0/src',
+                main: 'main'
+            },
+            {
+                name: 'saber-dom',
+                location: '../dep/saber-dom/0.4.0/src',
+                main: 'main'
+            },
+            {
+                name: 'saber-promise',
+                location: '../dep/saber-promise/0.1.2/src',
+                main: 'promise'
+            },
+            {
+                name: 'saber-run',
+                location: '../dep/saber-run/0.2.0/src',
+                main: 'main'
+            },
+            {
+                name: 'saber-emitter',
+                location: '../dep/saber-emitter/0.3.1/src',
+                main: 'emitter'
+            },
+            {
+                name: 'saber-router',
+                location: '../dep/saber-router/0.2.0/src',
+                main: 'main'
+            },
+            {
+                name: 'saber-uri',
+                location: '../dep/saber-uri/0.1.0/src',
+                main: 'main'
+            },
+            {
+                name: 'saber-tap',
+                location: '../dep/saber-tap/0.1.1/src',
+                main: 'tap'
+            }
+        ]
+    });
+    </script>
+
+</head>
+
+<body>
+    <div id="viewport"></div>
+
+    <script>
+    require(['app']);
+    </script>
+</body>
+</html>

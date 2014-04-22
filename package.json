@@ -1,0 +1,34 @@
+{
+    "name": "saber-showcase",
+    "version": "0.0.1",
+    "description": "saber 的演示项目",
+    "maintainers": [
+        {
+            "name": "Firede",
+            "email": "firede@firede.us"
+        }
+    ],
+    "edp": {
+        "dependencies": {
+            "saber-firework": "0.x",
+            "etpl": "2.x",
+            "hammer": "1.x",
+            "saber-viewport": "0.x",
+            "saber-lang": "0.x",
+            "saber-dom": "0.x",
+            "saber-promise": "0.x",
+            "saber-run": "0.x",
+            "saber-emitter": "0.x",
+            "saber-router": "0.x",
+            "saber-uri": "0.x",
+            "saber-tap": "0.x"
+        }
+    },
+    "dependencies": {
+        "edp-provider-rider": "~0.3.2",
+        "rider-ui": "~0.0.1"
+    },
+    "license": "MIT",
+    "repository": "git://github.com/ecomfe/saber-showcase.git",
+    "bugs": "https://github.com/ecomfe/edp-showcase/issues"
+}

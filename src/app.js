@@ -5,6 +5,8 @@ define(function (require) {
 
     var slide = require('saber-viewport/transition/slide');
 
+    require('saber-tap').mixin(document.body);
+
     Resolver.disableExceptionCapture();
 
     firework.load(require('./config'));

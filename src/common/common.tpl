@@ -13,9 +13,15 @@
         <!-- /if -->
 
         <!-- if: ${pageName} == 'list_new' -->
-        <a class="ui-btn" data-ui="active">分类</a>
+        <a class="ui-btn" data-ui="active">最新</a>
         <!-- else -->
-        <a class="ui-btn" href="#/list/new">分类</a>
+        <a class="ui-btn" href="#/list/new">最新</a>
+        <!-- /if -->
+
+        <!-- if: ${pageName} == 'list_comment' -->
+        <a class="ui-btn" data-ui="active">评论</a>
+        <!-- else -->
+        <a class="ui-btn" href="#/list/comment">评论</a>
         <!-- /if -->
     </div>
 </footer>

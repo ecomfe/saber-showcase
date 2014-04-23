@@ -14,7 +14,10 @@ exports.getLocations = function () {
     return [
         {
             location: /\/$/,
-            handler: home( 'index.html' )
+            handler: [
+                home( 'index.html' ),
+                livereload()
+            ]
         },
         {
             location: /\.css($|\?)/,

@@ -3,12 +3,14 @@ define(function (require) {
     var Resolver = require('saber-promise');
     var firework = require('saber-firework');
 
+    // 使用slide转场效果
     var slide = require('saber-viewport/transition/slide');
 
-    require('saber-tap').mixin(document.body);
-
+    // Only For Debug
+    // 关闭Promise的异常捕获，方便调试
     Resolver.disableExceptionCapture();
 
+    // 加载路由配置信息
     firework.load(require('./config'));
 
     var config = {
@@ -35,6 +37,10 @@ define(function (require) {
             }
         };
 
-    firework.start('viewport', config);
+    return {
+        init: function () {
+            firework.start('viewport', config);
+        }
+    };
 
 });

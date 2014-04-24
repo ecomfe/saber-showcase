@@ -85,7 +85,9 @@
     <div id="viewport"></div>
 
     <script>
-    require(['app']);
+        require(['app'], function (app) {
+            app.init();
+        });
     </script>
 </body>
 </html>

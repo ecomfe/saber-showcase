@@ -1,4 +1,3 @@
-<!-- target: list_new -->
 <!-- use: mainHeader(pageName='list_new') -->
 <div class="main-container">
     <ul>

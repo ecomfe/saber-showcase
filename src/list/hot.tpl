@@ -1,4 +1,3 @@
-<!-- target: list_hot -->
 <!-- use: mainHeader(pageName='list_hot') -->
 <div class="main-container">
 

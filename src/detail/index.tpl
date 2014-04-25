@@ -1,4 +1,3 @@
-<!-- target: detail -->
 <!-- use: mainHeader(pageName='detail') -->
 <div class="main-container">
 

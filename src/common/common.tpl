@@ -17,11 +17,27 @@
         <!-- else -->
         <a class="ui-btn" href="#/list/new">最新</a>
         <!-- /if -->
-
-        <!-- if: ${pageName} == 'list_comment' -->
-        <a class="ui-btn" data-ui="active">评论</a>
-        <!-- else -->
-        <a class="ui-btn" href="#/list/comment">评论</a>
-        <!-- /if -->
     </div>
 </footer>
+
+<!-- target: newsList -->
+<!-- for: ${list} as ${item}, ${index} -->
+<a href="#/detail/${item.id}" class="news-item">
+    <span data-role="meta">
+        <span data-role="author">no.${item.no|html} by ${item.author|html}</span>
+        <span data-role="time">${item.createDate|html}</span>
+    </span>
+
+    <!-- if: ${item.read} -->
+    <h2 data-role="title" data-state="read">${item.title|html}</h2>
+    <!-- else -->
+    <h2 data-role="title">${item.title|html}</h2>
+    <!-- /if -->
+
+    <span data-role="meta">
+        <span data-role="count">${item.meta|html}</span>
+        <span data-role="host">${item.source|html}</span>
+    </span>
+</a>
+<!-- /for -->
+

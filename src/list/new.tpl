@@ -1,9 +1,13 @@
 <!-- use: mainHeader(pageName='list_new') -->
 <div class="main-container">
-    <ul>
-        <!-- for: ${list} as ${item} -->
-        <li><a href="#/detail/${item.id}">${item.title|html}</a></li>
-        <!-- /for -->
-    </ul>
+
+    <div class="news-list">
+        <!-- import: newsList -->
+    </div>
+
+    <!-- if: ${more} -->
+    <a class="news-list-more">加载更多</a>
+    <!-- /if -->
+
 </div>
 <!-- use: mainFooter(pageName='list_new') -->

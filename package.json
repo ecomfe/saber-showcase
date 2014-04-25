@@ -9,7 +9,10 @@
         }
     ],
     "contributors": [
-        { "name": "treelite", "email": "c.xinle@gmail.com" }
+        {
+            "name": "treelite",
+            "email": "c.xinle@gmail.com"
+        }
     ],
     "edp": {
         "dependencies": {
@@ -25,7 +28,8 @@
             "saber-router": "0.x",
             "saber-uri": "0.x",
             "saber-tap": "0.x",
-            "saber-ajax": "0.x"
+            "saber-ajax": "0.x",
+            "saber-storage": "0.x"
         }
     },
     "dependencies": {

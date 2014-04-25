@@ -36,6 +36,19 @@ exports.getLocations = function () {
             ]
         },
         {
+            location: /\/feed\/.*$/,
+            handler: [
+                function (context) {
+                    delete context.request.headers.host;
+                },
+                proxy('startupnews.duapp.com')
+            ]
+        },
+        {
+            location: /\/question\/.*$/,
+            handler: proxy('www.zhihu.com')
+        },
+        {
             location: /^.*$/,
             handler: [
                 file(),

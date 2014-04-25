@@ -8,6 +8,9 @@
             "email": "firede@firede.us"
         }
     ],
+    "contributors": [
+        { "name": "treelite", "email": "c.xinle@gmail.com" }
+    ],
     "edp": {
         "dependencies": {
             "saber-firework": "0.x",
@@ -21,7 +24,8 @@
             "saber-emitter": "0.x",
             "saber-router": "0.x",
             "saber-uri": "0.x",
-            "saber-tap": "0.x"
+            "saber-tap": "0.x",
+            "saber-ajax": "0.x"
         }
     },
     "dependencies": {

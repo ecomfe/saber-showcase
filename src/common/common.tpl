@@ -1,6 +1,8 @@
 <!-- target: mainHeader -->
-<header class="ui-bar main-header" data-ui="primary" data-viewport-bar="header" data-name="${pageName}">
-    <h1 data-ui="title">${pageName}</h1>
+<header class="main-header" data-viewport-bar="header" data-name="${pageName}">
+    <nav class="ui-bar" data-ui="primary header">
+        <h1 data-ui="title">${pageName}</h1>
+    </nav>
 </header>
 
 <!-- target: mainFooter -->

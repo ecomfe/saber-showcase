@@ -6,20 +6,22 @@
 </header>
 
 <!-- target: mainFooter -->
-<footer class="ui-bar main-footer" data-ui="footer" data-viewport-bar="footer" data-name="main">
-    <div class="ui-btns" data-ui="block">
-        <!-- if: ${pageName} == 'list_hot' -->
-        <a class="ui-btn" data-ui="active">热门</a>
-        <!-- else -->
-        <a class="ui-btn" href="#/">热门</a>
-        <!-- /if -->
+<footer class="main-footer" data-viewport-bar="footer" data-name="main">
+    <nav class="ui-bar" data-ui="footer">
+        <div class="ui-btns" data-ui="block">
+            <!-- if: ${pageName} == 'list_hot' -->
+            <a class="ui-btn" data-ui="active">热门</a>
+            <!-- else -->
+            <a class="ui-btn" href="#/">热门</a>
+            <!-- /if -->
 
-        <!-- if: ${pageName} == 'list_new' -->
-        <a class="ui-btn" data-ui="active">最新</a>
-        <!-- else -->
-        <a class="ui-btn" href="#/list/new">最新</a>
-        <!-- /if -->
-    </div>
+            <!-- if: ${pageName} == 'list_new' -->
+            <a class="ui-btn" data-ui="active">最新</a>
+            <!-- else -->
+            <a class="ui-btn" href="#/list/new">最新</a>
+            <!-- /if -->
+        </div>
+    </nav>
 </footer>
 
 <!-- target: newsList -->

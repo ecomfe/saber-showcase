@@ -1,32 +1,34 @@
 <!-- target: mainHeader -->
-<header class="main-header" data-viewport-bar="header" data-name="${pageName}">
-    <nav class="ui-bar" data-ui="primary header">
-        <h1 data-ui="title">${pageName}</h1>
-    </nav>
+<header class="ui-bar main-header" data-ui="primary header" data-viewport-bar="header">
+    <!-- if: ${showBack} -->
+    <a href="#" class="ui-btn" data-ui="primary">返回</a>
+    <!-- /if -->
+
+    <!-- var: pageTitle = ${pageTitle} || 'Startup News' -->
+    <h1 data-ui="title">${pageTitle}</h1>
 </header>
 
-<!-- target: mainFooter -->
-<footer class="main-footer" data-viewport-bar="footer" data-name="main">
-    <nav class="ui-bar" data-ui="footer">
-        <div class="ui-btns" data-ui="block">
-            <!-- if: ${pageName} == 'list_hot' -->
-            <a class="ui-btn" data-ui="active">热门</a>
-            <!-- else -->
-            <a class="ui-btn" href="#/">热门</a>
-            <!-- /if -->
+<!-- if: ${showNav} -->
+<nav class="ui-bar main-nav" data-ui="subheader" data-viewport-bar="subheader">
+    <div class="ui-btns" data-ui="block">
+        <!-- if: ${pageName} == 'list_hot' -->
+        <a class="ui-btn" data-ui="active">热门</a>
+        <!-- else -->
+        <a class="ui-btn" href="#/">热门</a>
+        <!-- /if -->
 
-            <!-- if: ${pageName} == 'list_new' -->
-            <a class="ui-btn" data-ui="active">最新</a>
-            <!-- else -->
-            <a class="ui-btn" href="#/list/new">最新</a>
-            <!-- /if -->
-        </div>
-    </nav>
-</footer>
+        <!-- if: ${pageName} == 'list_new' -->
+        <a class="ui-btn" data-ui="active">最新</a>
+        <!-- else -->
+        <a class="ui-btn" href="#/list/new">最新</a>
+        <!-- /if -->
+    </div>
+</nav>
+<!-- /if -->
 
 <!-- target: newsList -->
 <!-- for: ${list} as ${item}, ${index} -->
-<a href="#/detail/${item.id}" class="news-item">
+<a href="#/post/${item.id}" class="news-item">
     <span data-role="meta">
         <span data-role="author">no.${item.no|html} by ${item.author|html}</span>
         <span data-role="time">${item.createDate|html}</span>

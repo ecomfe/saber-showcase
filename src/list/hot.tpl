@@ -1,5 +1,5 @@
-<!-- use: mainHeader(pageName='list_hot') -->
-<div class="main-container">
+<!-- use: mainHeader(pageName='list_hot', showNav=true) -->
+<div class="news-container">
 
     <div class="news-list">
         <!-- import: newsList -->
@@ -10,4 +10,3 @@
     <!-- /if -->
 
 </div>
-<!-- use: mainFooter(pageName='list_hot') -->

@@ -4,7 +4,7 @@
  */
 
 define(function (require) {
-    
+
     var extend = require('saber-lang/extend');
     var inherits = require('saber-lang/inherits');
     var dom = require('saber-dom');
@@ -16,6 +16,9 @@ define(function (require) {
                 dom.addClass(ele, 'loading');
                 this.emit('more');
             }
+        },
+        'click: .news-nav a': function (ele) {
+            // need loading...
         }
     };
 

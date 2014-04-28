@@ -1,5 +1,5 @@
-<!-- use: mainHeader(pageName='post') -->
-<div class="main-container">
+<!-- use: mainHeader(pageName='Comments', showBack=true) -->
 
+<div class="post-container">
+    <h1>post</h1>
 </div>
-<!-- use: mainFooter(pageName='post') -->

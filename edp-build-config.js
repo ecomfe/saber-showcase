@@ -1,3 +1,12 @@
+var epr = require( 'edp-provider-rider' );
+var riderUI = require('rider-ui');
+
+function stylusPlugin( style ) {
+    style.use(epr.plugin());
+    style.use(riderUI());
+}
+
+exports.stylus = epr.stylus;
 exports.input = __dirname;
 
 var path = require( 'path' );
@@ -7,7 +16,13 @@ exports.output = path.resolve( __dirname, 'output' );
 // var pageEntries = 'html,htm,phtml,tpl,vm';
 
 exports.getProcessors = function () {
-    var lessProcessor = new LessCompiler();
+    var stylusProcessor = new StylusCompiler({
+            stylus: epr.stylus,
+            compileOptions: {
+                use: stylusPlugin
+            }
+        });
+    var html2jsPorcessor = new Html2JsCompiler();
     var cssProcessor = new CssCompressor();
     var moduleProcessor = new ModuleCompiler();
     var jsProcessor = new JsCompressor();
@@ -15,9 +30,9 @@ exports.getProcessors = function () {
     var addCopyright = new AddCopyright();
 
     return {
-        'default': [ lessProcessor, moduleProcessor, pathMapperProcessor ],
+        'default': [ stylusProcessor, html2jsPorcessor, moduleProcessor, pathMapperProcessor ],
         'release': [
-            lessProcessor, cssProcessor, moduleProcessor,
+            stylusProcessor, cssProcessor, html2jsPorcessor, moduleProcessor,
             jsProcessor, pathMapperProcessor, addCopyright
         ]
     };

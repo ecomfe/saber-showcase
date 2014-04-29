@@ -1,7 +1,7 @@
 var epr = require( 'edp-provider-rider' );
 var riderUI = require('rider-ui');
 
-function stylusConfig( style ) {
+function stylusPlugin( style ) {
     style.use(epr.plugin());
     style.use(riderUI());
 }
@@ -24,7 +24,7 @@ exports.getLocations = function () {
             handler: [
                 autocss({
                     stylus: {
-                        use: stylusConfig
+                        use: stylusPlugin
                     }
                 })
             ]

@@ -1,0 +1,7 @@
+node_modules/
+output/
+dep/
+.idea/
+.DS_Store
+*.log
+*.swp

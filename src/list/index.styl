@@ -1,0 +1,71 @@
+.news-container
+    padding-top: 88px
+
+.news-item
+    display: block
+    padding: 10px 15px
+
+    color: #000
+    text-decoration: none
+
+    $item-bg-color = #dfdfdf
+
+    &:active
+        background: $item-bg-color
+
+    // border
+    border-bottom: 1px solid $item-bg-color
+
+    // 1px border on retina
+    background-size: 0
+    +retina()
+        border: none
+        background-image: linear-gradient(0deg, $item-bg-color, $item-bg-color 50%, transparent 50%)
+        background-position: bottom
+        background-size: 100% 1px
+        background-repeat: no-repeat
+
+    [data-role~=title]
+        padding: 3px 0
+        font-size: rem(16)
+        line-height: rem(20)
+        &[data-state~=read]
+            color: #9b9b9b
+
+    [data-role~=meta]
+        display: block
+        font-size: rem(12)
+        font-weight: 300
+        line-height: rem(18)
+        color: #9b9b9b
+        clearfix()
+
+    [data-role~=author]
+    [data-role~=count]
+        float: left
+
+    [data-role~=time]
+    [data-role~=host]
+        float: right
+
+@keyframes rotate
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(360deg)
+
+.news-list-more
+    display: block
+    text-align: center
+    line-height: 3.6rem
+    background: #f7f7f7
+    color: #666
+    position: relative
+    &.loading:after
+        @extends .icon-rotate-right:before
+        @extends $-font-icon-base
+        absolute: 0 15px _ _
+        display: block
+        animation: rotate 1s linear infinite
+        vertical-align: middle
+        margin-left: 5px

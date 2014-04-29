@@ -1,18 +1,24 @@
+/**
+ * @file 详情页model
+ * @author saber(saber@baidu.com)
+ */
+
 define(function (require) {
 
-    var Resolver = require('saber-promise');
+    var Resolver = require('saber-promise')
+    var ajax = require('saber-ajax/ejson');
 
-    // mock data
-    var data = {};
+    var URL = '/post/';
 
     var config = {};
 
     config.fetch = function(query) {
+        if (!query.id) {
+            return Resolver.resolved({detail: {}, comments: []});
+        }
 
-        return Resolver.resolved({
-            list: data
-        });
-
+        var url = URL + query.id;
+        return ajax.get(url);
     };
 
     return config;

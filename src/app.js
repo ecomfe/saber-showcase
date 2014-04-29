@@ -1,5 +1,11 @@
+/**
+ * @file app
+ * @author saber(saber@baidu.com)
+ */
+
 define(function (require) {
 
+    var dom = require('saber-dom');
     var Resolver = require('saber-promise');
     var firework = require('saber-firework');
 
@@ -12,6 +18,11 @@ define(function (require) {
 
     // 加载路由配置信息
     firework.load(require('./config'));
+
+    // 完成页面加载后隐藏splash
+    firework.on('afterload', function () {
+        dom.hide(dom.g('splash-screen'));
+    });
 
     var config = {
             // 加载公共模版

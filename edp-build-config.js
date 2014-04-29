@@ -20,7 +20,10 @@ exports.getProcessors = function () {
             stylus: epr.stylus,
             compileOptions: {
                 use: stylusPlugin
-            }
+            },
+            files: [
+                'src/common/app.styl'
+            ]
         });
     var html2jsPorcessor = new Html2JsCompiler();
     var cssProcessor = new CssCompressor();

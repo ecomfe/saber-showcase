@@ -51,6 +51,7 @@ exports.exclude = [
     'dep/*/*/*.md',
     'dep/*/*/package.json',
     'edp-*',
+    'node_modules',
     '.edpproj',
     '.svn',
     '.git',

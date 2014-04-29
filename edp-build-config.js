@@ -25,7 +25,14 @@ exports.getProcessors = function () {
                 'src/common/app.styl'
             ]
         });
-    var html2jsPorcessor = new Html2JsCompiler();
+    var html2jsCompiler = new Html2JsCompiler({
+        extnames: 'tpl',
+        combine: true
+    });
+    var html2jsCleanner = new Html2JsCompiler({
+        extnames: 'tpl',
+        clean: true
+    });
     var cssProcessor = new CssCompressor();
     var moduleProcessor = new ModuleCompiler();
     var jsProcessor = new JsCompressor();
@@ -33,9 +40,9 @@ exports.getProcessors = function () {
     var addCopyright = new AddCopyright();
 
     return {
-        'default': [ stylusProcessor, html2jsPorcessor, moduleProcessor, pathMapperProcessor ],
+        'default': [ stylusProcessor, html2jsCompiler, moduleProcessor, html2jsCleanner, pathMapperProcessor ],
         'release': [
-            stylusProcessor, cssProcessor, html2jsPorcessor, moduleProcessor,
+            stylusProcessor, cssProcessor, html2jsCompiler, moduleProcessor, html2jsCleanner,
             jsProcessor, pathMapperProcessor, addCopyright
         ]
     };

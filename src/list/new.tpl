@@ -6,7 +6,7 @@
     </div>
 
     <!-- if: ${more} -->
-    <a class="news-list-more">加载更多</a>
+    <a class="news-list-more">点击加载更多</a>
     <!-- /if -->
 
 </div>

@@ -1,11 +1,14 @@
 saber-showcase
 ===
 
-## 安装依赖
+这是一个 **Startup News** 的 WebApp 版阅读器。
 
-    edp update -f
-    npm install
+## 运行方法
 
-## 启动服务器
+先进入项目目录，安装依赖：
 
-    edp webserver start
+    npm install && edp update -f
+
+然后启动服务器：
+
+    edp mobile start

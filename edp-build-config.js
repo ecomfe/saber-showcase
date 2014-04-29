@@ -71,6 +71,8 @@ exports.exclude = [
     'Desktop.ini',
     'Thumbs.db',
     '.DS_Store',
+    'package.json',
+    'README.md',
     '*.tmp',
     '*.bak',
     '*.swp'

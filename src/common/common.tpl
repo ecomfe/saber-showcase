@@ -33,19 +33,19 @@
 <!-- for: ${list} as ${item}, ${index} -->
 <a href="#/post/${item.id}" class="news-item">
     <span data-role="meta">
-        <span data-role="author">no.${item.no|html} by ${item.author|html}</span>
-        <span data-role="time">${item.createDate|html}</span>
+        <span data-role="author">no.${item.no} by ${item.author}</span>
+        <span data-role="time">${item.createDate}</span>
     </span>
 
     <!-- if: ${item.read} -->
-    <h2 data-role="title" data-state="read">${item.title|html}</h2>
+    <h2 data-role="title" data-state="read">${item.title}</h2>
     <!-- else -->
-    <h2 data-role="title">${item.title|html}</h2>
+    <h2 data-role="title">${item.title}</h2>
     <!-- /if -->
 
     <span data-role="meta">
-        <span data-role="count">${item.meta|html}</span>
-        <span data-role="host">${item.source|html}</span>
+        <span data-role="count">${item.meta}</span>
+        <span data-role="host">${item.source}</span>
     </span>
 </a>
 <!-- /for -->

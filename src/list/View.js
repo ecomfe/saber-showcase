@@ -16,9 +16,6 @@ define(function (require) {
                 dom.addClass(ele, 'loading');
                 this.emit('more');
             }
-        },
-        'click: .news-nav a': function (ele) {
-            // need loading...
         }
     };
 

@@ -48,9 +48,24 @@
     [data-role~=host]
         float: right
 
+@keyframes rotate
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(360deg)
+
 .news-list-more
     display: block
     text-align: center
-    line-height: 3rem
+    line-height: 3.6rem
     background: #f7f7f7
     color: #666
+    position: relative
+    &.loading:after
+        @extends .icon-rotate-right:before
+        @extends $-font-icon-base
+        absolute: 0 15px _ _
+        display: block
+        animation: rotate 1s linear infinite
+        vertical-align: middle
+        margin-left: 5px

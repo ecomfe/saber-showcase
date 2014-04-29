@@ -1,7 +1,10 @@
 <!-- target: mainHeader -->
 <header class="ui-bar main-header" data-ui="primary header" data-viewport-bar="header">
     <!-- if: ${showBack} -->
-    <a href="#" class="ui-btn" data-ui="primary">返回</a>
+    <a href="#" class="ui-btn" data-ui="primary icon-left">
+        <i class="icon-left"></i>
+        返回
+    </a>
     <!-- /if -->
 
     <!-- var: pageTitle = ${pageTitle} || 'Startup News' -->
@@ -25,6 +28,7 @@
     </div>
 </nav>
 <!-- /if -->
+
 
 <!-- target: newsList -->
 <!-- for: ${list} as ${item}, ${index} -->

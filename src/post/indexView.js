@@ -1,3 +1,8 @@
+/**
+ * @file 详情页view
+ * @author saber(saber@baidu.com)
+ */
+
 define(function (require) {
 
     var config = {};

@@ -36,7 +36,7 @@ exports.getLocations = function () {
             ]
         },
         {
-            location: '/(feed|post)/*',
+            location: /^\/(feed|post)\/*/,
             handler: [
                 function (context) {
                     delete context.request.headers.host;

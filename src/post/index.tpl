@@ -15,9 +15,7 @@
 
         <div data-role="meta">
             <span data-role="author">${detail.author|html}</span>
-            <!--
-            <span data-role="count">3 points</span>
-            -->
+            <span data-role="count">${detail.points|html} point<!-- if: ${detail.points} > 1 -->s<!-- /if --></span>
             <span data-role="time">${detail.createDate|html}</span>
         </div>
     </div>

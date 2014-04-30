@@ -1,6 +1,6 @@
 {
     "name": "saber-showcase",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "saber 的演示项目",
     "maintainers": [
         {
@@ -34,7 +34,7 @@
     },
     "dependencies": {
         "edp-provider-rider": "~0.3.3",
-        "rider-ui": "~0.1.0"
+        "rider-ui": "~0.1.1"
     },
     "license": "MIT",
     "repository": "git://github.com/ecomfe/saber-showcase.git",

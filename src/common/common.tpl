@@ -31,17 +31,30 @@
 
 <!-- target: newsList -->
 <!-- for: ${list} as ${item}, ${index} -->
+
+<!-- if: ${item.comments} > 0 -->
 <a href="#/post/${item.id}" class="news-item">
+<!-- else -->
+<a href="${item.url}" target="_blank" class="news-item">
+<!-- /if -->
+
     <span data-role="meta">
         <span data-role="author">no.${item.no} by ${item.author}</span>
         <span data-role="time">${item.createDate}</span>
     </span>
 
     <!-- if: ${item.read} -->
-    <h2 data-role="title" data-state="read">${item.title}</h2>
+    <h2 data-role="title" data-state="read">
     <!-- else -->
-    <h2 data-role="title">${item.title}</h2>
+    <h2 data-role="title">
     <!-- /if -->
+        ${item.title}
+        <!-- if: ${item.comments} > 0 -->
+            <i class="icon-comments"></i>
+        <!-- else -->
+            <i class="icon-external-link"></i>
+        <!-- /if -->
+    </h2>
 
     <span data-role="meta">
         <span data-role="count">${item.meta}</span>

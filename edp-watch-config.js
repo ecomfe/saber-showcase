@@ -2,7 +2,7 @@ exports.baseDir = __dirname;
 
 var globalFilters = {
     ignoreNodeModules: '!(node_modules/*|*/node_modules/*)',
-    ignoreEdpPackages: '!dep/*',
+    ignoreEdpPackages: '!(dep/*|output/*)',
     ignoreVCSFiles   : '!(*).(git|svn|idea)/*',
     ignoreIDEFiles   : '!(*).(DS_Store)',
     ignoreNodeConfig : '!(*)(.gitignore|packkage.json|*.md)'

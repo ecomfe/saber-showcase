@@ -32,6 +32,14 @@
             "saber-storage": "0.1.1",
             "saber-string": "0.3.0",
             "saber-widget": "0.3.1"
+        },
+        "wwwroot": "/",
+        "depDir": "dep",
+        "srcDir": "src",
+        "loaderAutoConfig": "js,htm,html,tpl,vm,phtml",
+        "loaderUrl": "http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-10/esl.js",
+        "mobile": {
+            "theme": "spa"
         }
     },
     "dependencies": {

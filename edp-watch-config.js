@@ -1,8 +1,13 @@
+/**
+ * @file watch配置
+ * @author edpx-mobile
+ */
+
 exports.baseDir = __dirname;
 
 var globalFilters = {
     ignoreNodeModules: '!(node_modules/*|*/node_modules/*)',
-    ignoreEdpPackages: '!(dep/*|output/*)',
+    ignoreEdpPackages: '!dep/*',
     ignoreVCSFiles   : '!(*).(git|svn|idea)/*',
     ignoreIDEFiles   : '!(*).(DS_Store)',
     ignoreNodeConfig : '!(*)(.gitignore|packkage.json|*.md)'
@@ -34,7 +39,7 @@ exports.getTasks = function () {
 
 exports.getGroups = function () {
     return {
-        'default': [ 'livereload' ]
+        'default': ['livereload']
     };
 };
 

@@ -1,6 +1,6 @@
 /**
  * @file host list model
- * @author saber(saber@baidu.com)
+ * @author saber team
  */
 
 define(function (require) {

@@ -1,6 +1,6 @@
 /**
  * @file new list view
- * @author saber(saber@baidu.com)
+ * @author saber team
  */
 
 define(function (require) {

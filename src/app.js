@@ -1,6 +1,6 @@
 /**
  * @file app
- * @author saber(saber@baidu.com)
+ * @author saber team
  */
 
 define(function (require) {

@@ -1,6 +1,6 @@
 /**
  * @file 详情页
- * @author saber(saber@baidu.com)
+ * @author saber team
  */
 
 define(function (require) {

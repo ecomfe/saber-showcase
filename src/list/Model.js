@@ -1,6 +1,6 @@
 /**
  * @file list列表Model基类
- * @author saber(saber@baidu.com)
+ * @author saber team
  */
 
 define(function (require) {

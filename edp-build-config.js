@@ -1,53 +1,38 @@
-var epr = require( 'edp-provider-rider' );
-var riderUI = require('rider-ui');
+/**
+ * @file build配置
+ * @author edpx-mobile
+ */
 
-function stylusPlugin( style ) {
-    style.use(epr.plugin());
-    style.use(riderUI());
-}
+var cwd = process.cwd();
+var path = require('path');
 
+// 引入 rider 支持
+var epr = require('./edp-rider-config');
+
+/**
+ * 指定匹配版本的 stylus
+ */
 exports.stylus = epr.stylus;
-exports.input = __dirname;
 
-var path = require( 'path' );
-exports.output = path.resolve( __dirname, 'output' );
+/**
+ * 输入目录
+ *
+ * @type {string}
+ */
+exports.input = cwd;
 
-// var moduleEntries = 'html,htm,phtml,tpl,vm,js';
-// var pageEntries = 'html,htm,phtml,tpl,vm';
+/**
+ * 输出目录
+ *
+ * @type {string}
+ */
+exports.output = path.resolve(cwd, 'output');
 
-exports.getProcessors = function () {
-    var stylusProcessor = new StylusCompiler({
-            stylus: epr.stylus,
-            compileOptions: {
-                use: stylusPlugin
-            },
-            files: [
-                'src/common/app.styl'
-            ]
-        });
-    var html2jsCompiler = new Html2JsCompiler({
-        extnames: 'tpl',
-        combine: true
-    });
-    var html2jsCleanner = new Html2JsCompiler({
-        extnames: 'tpl',
-        clean: true
-    });
-    var cssProcessor = new CssCompressor();
-    var moduleProcessor = new ModuleCompiler();
-    var jsProcessor = new JsCompressor();
-    var pathMapperProcessor = new PathMapper();
-    var addCopyright = new AddCopyright();
-
-    return {
-        'default': [ stylusProcessor, html2jsCompiler, moduleProcessor, html2jsCleanner, pathMapperProcessor ],
-        'release': [
-            stylusProcessor, cssProcessor, html2jsCompiler, moduleProcessor, html2jsCleanner,
-            jsProcessor, pathMapperProcessor, addCopyright
-        ]
-    };
-};
-
+/**
+ * 排除文件pattern列表
+ *
+ * @type {Array}
+ */
 exports.exclude = [
     'tool',
     'doc',
@@ -62,25 +47,73 @@ exports.exclude = [
     'dep/*/*/package.json',
     'edp-*',
     'node_modules',
+    'package.json',
     '.edpproj',
+    '.editorconfig',
     '.svn',
     '.git',
     '.gitignore',
     '.idea',
     '.project',
+    'README.md',
     'Desktop.ini',
     'Thumbs.db',
     '.DS_Store',
-    'package.json',
-    'README.md',
     '*.tmp',
     '*.bak',
     '*.swp'
 ];
 
-exports.injectProcessor = function ( processors ) {
-    for ( var key in processors ) {
+/**
+ * 获取构建processors的方法
+ *
+ * @return {Array}
+ */
+exports.getProcessors = function () {
+    var cssProcessor = new CssCompressor();
+    var moduleProcessor = new ModuleCompiler();
+    var jsProcessor = new JsCompressor();
+    var pathMapperProcessor = new PathMapper();
+    var html2jsPorcessor = new Html2JsCompiler({
+            extnames: 'tpl',
+            combine: true
+        });
+    var html2jsClearPorcessor = new Html2JsCompiler({
+            extnames: 'tpl',
+            clean: true
+        });
+    var stylusProcessor = new StylusCompiler({
+            stylus: epr.stylus,
+            compileOptions: {
+                use: epr.stylusPlugin
+            },
+            files: [
+                'src/common/app.styl'
+            ]
+        });
+    // var addCopyright = new AddCopyright();
+
+    return [
+        stylusProcessor,
+        cssProcessor,
+        html2jsPorcessor,
+        moduleProcessor,
+        html2jsClearPorcessor,
+        jsProcessor,
+        pathMapperProcessor
+    ];
+};
+
+exports.moduleEntries = 'html,htm,phtml,tpl,vm,js';
+exports.pageEntries = 'html,htm,phtml,tpl,vm';
+
+/**
+ * builder主模块注入processor构造器的方法
+ *
+ * @param {Object} processors
+ */
+exports.injectProcessor = function (processors) {
+    for (var key in processors) {
         global[ key ] = processors[ key ];
     }
 };
-

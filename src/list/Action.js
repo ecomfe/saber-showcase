@@ -1,10 +1,10 @@
 /**
  * @file list列表Action基类
- * @author saber(saber@baidu.com)
+ * @author saber team
  */
 
 define(function (require) {
-    
+
     var extend = require('saber-lang/extend');
     var bind = require('saber-lang/bind');
     var inherits = require('saber-lang/inherits');

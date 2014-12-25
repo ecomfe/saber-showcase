@@ -49,6 +49,7 @@ exports.exclude = [
     'node_modules',
     'package.json',
     '.edpproj',
+    '.editorconfig',
     '.svn',
     '.git',
     '.gitignore',
@@ -84,11 +85,11 @@ exports.getProcessors = function () {
     var stylusProcessor = new StylusCompiler({
             stylus: epr.stylus,
             compileOptions: {
-                use: epr.stylusPlugin,
-                files: [
-                    'src/common/app.styl'
-                ]
-            }
+                use: epr.stylusPlugin
+            },
+            files: [
+                'src/common/app.styl'
+            ]
         });
     // var addCopyright = new AddCopyright();
 

@@ -5,3 +5,4 @@ dep/
 .DS_Store
 *.log
 *.swp
+*.tpl.js

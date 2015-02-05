@@ -3,6 +3,7 @@
  * @author edpx-mobile
  */
 
+
 // 引入 rider 支持
 var epr = require('./edp-rider-config');
 
@@ -43,12 +44,6 @@ exports.getLocations = function () {
             ]
         },
         {
-            location: /^[^\?]+?\.tpl\.js($|\?)/,
-            handler: [
-                html2js()
-            ]
-        },
-        {
             location: /^\/(feed|post)\/*/,
             handler: [
                 function (context) {
@@ -60,16 +55,38 @@ exports.getLocations = function () {
         {
             location: /\/[^\/.]*$/,
             handler: [
-                proxy('local:8000')
+                function (context) {
+                    delete context.request.headers.host;
+                },
+                proxy('127.0.0.1', '8000')
             ]
         },
         {
             location: /^.*$/,
             handler: [
                 file(),
-                // weinre({port: 8889}),
-                livereload(),
-                proxyNoneExists()
+                // 动态处理src下不存在的js与tpl
+                function (context) {
+                    var path = require('path');
+                    var c2a = require('c2a');
+                    var pathname = context.request.pathname;
+                    var extname = path.extname(pathname);
+                    if (context.status == 404
+                        && pathname.indexOf('/src/') === 0
+                        && extname === '.js'
+                    ) {
+                        context.status = 200;
+                        context.request.pathname = pathname.replace('/src/', '/lib/');
+                        var handler;
+                        if (pathname.indexOf('.tpl') < 0) {
+                            handler = c2a.edpWebserver();
+                        }
+                        else {
+                            handler = html2js();
+                        }
+                        handler(context);
+                    }
+                }
             ]
         }
     ];

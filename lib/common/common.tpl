@@ -2,7 +2,7 @@
 <!-- var: pageTitle = ${pageTitle} || 'Startup News' -->
 <header class="ui-bar main-header" data-ui="primary header" data-viewport-bar="header" data-name="${pageTitle}">
     <!-- if: ${showBack} -->
-    <a href="#" class="ui-btn" data-ui="primary icon-left">
+    <a href="${config.root}/" class="ui-btn" data-ui="primary icon-left">
         <i class="icon-left"></i>
         返回
     </a>

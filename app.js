@@ -14,7 +14,14 @@ var app = require('isom');
 app.load(require('./lib/config'));
 
 var options = {
-    template: require('./lib/common/common.tpl.js')
+    template: require('./lib/common/common.tpl'),
+    // TODO
+    // 考虑可配置
+    templateData: {
+        config: {
+            root: ''
+        }
+    }
 };
 
 app.start(8000, options);

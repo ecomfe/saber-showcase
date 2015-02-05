@@ -9,6 +9,9 @@ define(function (require) {
     var Resolver = require('saber-promise');
     var firework = require('saber-firework');
 
+    var router = require('saber-router');
+    router.controller(require('saber-router/controller/popstate'));
+
     // 使用slide转场效果
     var slide = require('saber-viewport/transition/slide');
 
@@ -19,18 +22,27 @@ define(function (require) {
     // 加载路由配置信息
     firework.load(require('./config'));
 
-    // 完成页面加载后隐藏splash
-    firework.on('afterload', function () {
-        dom.hide(dom.g('splash-screen'));
-    });
-
     var config = {
             // 加载公共模版
             template: require('./common/common.tpl'),
 
+            // TODO
+            // 考虑可配置
+            templateData: {
+                config: {
+                    root: ''
+                }
+            },
+
             viewport: {
                 transition: 'slide'
             },
+
+            // 添加自定义路由器
+            router: router,
+
+            // 启动首屏渲染
+            firstScreen: true,
 
             processor: {
                 // 处理转场的方向

@@ -48,5 +48,8 @@
   },
   "license": "MIT",
   "repository": "git://github.com/ecomfe/saber-showcase.git",
-  "bugs": "https://github.com/ecomfe/edp-showcase/issues"
+  "bugs": "https://github.com/ecomfe/edp-showcase/issues",
+  "devDependencies": {
+    "c2a": "^0.2.0"
+  }
 }

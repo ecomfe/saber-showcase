@@ -44,9 +44,11 @@ exports.getLocations = function () {
             ]
         },
         {
-            location: /^\/(feed|post)\/*/,
+            location: /^\/api\/*/,
             handler: [
                 function (context) {
+                    var url = context.request.url;
+                    context.request.url = url.replace('/api/', '/');
                     delete context.request.headers.host;
                 },
                 proxy('startupnews.duapp.com')

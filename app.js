@@ -6,7 +6,7 @@
 var ajax = require('saber-ajax').ejson;
 
 ajax.config({
-    host: 'http://local:8848'
+    host: 'http://local:8848/api'
 });
 
 var app = require('isom');

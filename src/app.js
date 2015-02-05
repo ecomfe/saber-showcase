@@ -9,6 +9,12 @@ define(function (require) {
     var Resolver = require('saber-promise');
     var firework = require('saber-firework');
 
+    var ajax = require('saber-ajax').ejson;
+    // 设置所有异步请求的URL前缀
+    ajax.config({
+        host: '/api'
+    });
+
     // 启用同构模式
     require('saber-firework/extension/rebas');
 

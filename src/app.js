@@ -9,8 +9,8 @@ define(function (require) {
     var Resolver = require('saber-promise');
     var firework = require('saber-firework');
 
-    var router = require('saber-router');
-    router.controller(require('saber-router/controller/popstate'));
+    // 启用同构模式
+    require('saber-firework/extension/rebas');
 
     // 使用slide转场效果
     var slide = require('saber-viewport/transition/slide');
@@ -37,12 +37,6 @@ define(function (require) {
             viewport: {
                 transition: 'slide'
             },
-
-            // 添加自定义路由器
-            router: router,
-
-            // 启动首屏渲染
-            firstScreen: true,
 
             processor: {
                 // 处理转场的方向

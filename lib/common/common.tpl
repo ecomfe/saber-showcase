@@ -16,13 +16,13 @@
         <!-- if: ${pageName} == 'list_hot' -->
         <a class="ui-btn" data-ui="active">热门</a>
         <!-- else -->
-        <a class="ui-btn" href="#/">热门</a>
+        <a class="ui-btn" href="${config.root}/">热门</a>
         <!-- /if -->
 
         <!-- if: ${pageName} == 'list_new' -->
         <a class="ui-btn" data-ui="active">最新</a>
         <!-- else -->
-        <a class="ui-btn" href="#/list/new">最新</a>
+        <a class="ui-btn" href="${config.root}/list/new">最新</a>
         <!-- /if -->
     </div>
 </nav>
@@ -33,7 +33,7 @@
 <!-- for: ${list} as ${item}, ${index} -->
 
 <!-- if: ${item.comments} > 0 -->
-<a href="#/post/${item.id}" class="news-item">
+<a href="${config.root}/post/${item.id}" class="news-item">
 <!-- else -->
 <a href="${item.url}" target="_blank" class="news-item">
 <!-- /if -->

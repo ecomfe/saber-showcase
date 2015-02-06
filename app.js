@@ -9,7 +9,7 @@ ajax.config({
     host: 'http://local:8848/api'
 });
 
-var app = require('isom');
+var app = require('rebas');
 
 app.load(require('./lib/config'));
 

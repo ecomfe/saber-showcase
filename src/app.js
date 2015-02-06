@@ -16,7 +16,7 @@ define(function (require) {
     });
 
     // 启用同构模式
-    require('saber-firework/extension/rebas');
+    require('saber-firework/extension/isomorphic');
 
     // 使用slide转场效果
     var slide = require('saber-viewport/transition/slide');

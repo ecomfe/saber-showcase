@@ -32,14 +32,6 @@ define(function (require) {
             // 加载公共模版
             template: require('./common/common.tpl'),
 
-            // TODO
-            // 考虑可配置
-            templateData: {
-                config: {
-                    root: ''
-                }
-            },
-
             viewport: {
                 transition: 'slide'
             },
@@ -61,7 +53,8 @@ define(function (require) {
         };
 
     return {
-        init: function () {
+        init: function (data) {
+            config.templateData = data;
             firework.start('viewport', config);
         }
     };

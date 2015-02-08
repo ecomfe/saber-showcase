@@ -3,6 +3,7 @@ output/
 dep/
 .idea/
 .DS_Store
+log
 *.log
 *.swp
 *.tpl.js

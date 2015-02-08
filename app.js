@@ -3,25 +3,26 @@
  * @author treelite(c.xinle@gmail.com)
  */
 
+var app = require('rebas');
 var ajax = require('saber-ajax').ejson;
+var config = app.get('app');
 
 ajax.config({
-    host: 'http://local:8848/api'
+    host: config.remote
 });
-
-var app = require('rebas');
 
 app.load(require('./lib/config'));
 
 var options = {
+
     template: require('./lib/common/common.tpl'),
-    // TODO
-    // 考虑可配置
+
     templateData: {
         config: {
             root: ''
         }
     }
+
 };
 
-app.start(8000, options);
+app.start(config.port, options);

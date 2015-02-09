@@ -8,7 +8,8 @@ var ajax = require('saber-ajax').ejson;
 var config = app.get('app');
 
 ajax.config({
-    host: config.remote
+    host: config.remote,
+    logger: app.logger
 });
 
 app.load(require('./lib/config'));

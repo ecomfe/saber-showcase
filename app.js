@@ -12,6 +12,9 @@ ajax.config({
     logger: app.logger
 });
 
+// 附件异步请求中间件
+app.before(ajax.express(['cookie', 'set-cookie']));
+
 app.load(require('./lib/config'));
 
 var options = {

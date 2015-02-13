@@ -44,7 +44,13 @@
   "dependencies": {
     "edp-provider-rider": "~0.4.2",
     "html2js": "^0.1.0",
-    "rider-ui": "~0.1.1"
+    "rider-ui": "~0.1.1",
+    "etpl": "~3.0.0",
+    "rebas": "~0.1.0",
+    "saber-ajax": "~2.0.0",
+    "saber-lang": "~2.0.0",
+    "saber-mm": "~0.1.0",
+    "saber-promise": "~2.0.0"
   },
   "license": "MIT",
   "repository": "git://github.com/ecomfe/saber-showcase.git",

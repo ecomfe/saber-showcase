@@ -29,6 +29,7 @@ define(function (require) {
     firework.load(require('./config'));
 
     var config = {
+            root: firework.getSyncData('root'),
             // 加载公共模版
             template: require('./common/common.tpl'),
 

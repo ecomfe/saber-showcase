@@ -1,6 +1,5 @@
-<!-- use: mainHeader(pageName='list_hot', showNav=true) -->
+<!-- use: mainHeader(pageName='list_hot', showNav=true, config=${config}) -->
 <div class="news-container">
-
     <div class="news-list">
         <!-- import: newsList -->
     </div>

@@ -17,13 +17,16 @@ app.before(ajax.express(['cookie', 'set-cookie']));
 
 app.load(require('./lib/config'));
 
+app.setSyncData('root', config.root);
+
 var options = {
 
     template: require('./lib/common/common.tpl'),
 
     templateData: {
         config: {
-            root: ''
+            root: config.root,
+            staticRoot: config.staticRoot
         }
     }
 

@@ -6,4 +6,3 @@ dep/
 log
 *.log
 *.swp
-*.tpl.js

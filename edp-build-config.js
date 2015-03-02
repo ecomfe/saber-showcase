@@ -9,6 +9,9 @@ var path = require('path');
 // 引入 rider 支持
 var epr = require('./edp-rider-config');
 
+// 引入 rebas 构建处理器
+var transfer = require('rebas-transfer');
+
 /**
  * 指定匹配版本的 stylus
  */
@@ -96,9 +99,9 @@ exports.getProcessors = function () {
     return [
         stylusProcessor,
         cssProcessor,
-        html2jsPorcessor,
-        moduleProcessor,
-        html2jsClearPorcessor,
+        transfer.builder(),
+        //moduleProcessor,
+        transfer.builder({clear: true}),
         jsProcessor,
         pathMapperProcessor
     ];

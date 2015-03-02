@@ -56,6 +56,6 @@
   "repository": "git://github.com/ecomfe/saber-showcase.git",
   "bugs": "https://github.com/ecomfe/edp-showcase/issues",
   "devDependencies": {
-    "c2a": "^0.2.0"
+    "rebas-transfer": "^0.1.0"
   }
 }

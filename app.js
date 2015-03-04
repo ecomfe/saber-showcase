@@ -12,8 +12,12 @@ ajax.config({
     logger: app.logger
 });
 
-// 附件异步请求中间件
-app.before(ajax.express(['cookie', 'set-cookie']));
+// 透传异步请求的HTTP Header
+ajax.rebas(app, ['cookie', 'set-cookie']);
+
+// 启用存储
+require('saber-storage').rebas(app);
+
 
 app.load(require('./lib/config'));
 

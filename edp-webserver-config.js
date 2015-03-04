@@ -57,7 +57,7 @@ exports.getLocations = function () {
             ]
         },
         {
-            location: /^\/startup\/[^\/.]*$/,
+            location: /^\/startup\//,
             handler: [
                 function (context) {
                     var url = context.request.url;

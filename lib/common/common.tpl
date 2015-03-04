@@ -44,9 +44,9 @@
     </span>
 
     <!-- if: ${item.read} -->
-    <h2 data-role="title" data-state="read">
+    <h2 data-role="title" data-state="read" data-id="${item.id}">
     <!-- else -->
-    <h2 data-role="title">
+    <h2 data-role="title" data-id="${item.id}">
     <!-- /if -->
         ${item.title}
         <!-- if: ${item.comments} > 0 -->

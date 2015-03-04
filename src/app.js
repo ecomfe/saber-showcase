@@ -7,7 +7,7 @@ define(function (require) {
 
     var dom = require('saber-dom');
     var Resolver = require('saber-promise');
-    var firework = require('saber-firework');
+    var app = require('saber-firework');
 
     var ajax = require('saber-ajax').ejson;
     // 设置所有异步请求的URL前缀
@@ -26,10 +26,13 @@ define(function (require) {
     Resolver.disableExceptionCapture();
 
     // 加载路由配置信息
-    firework.load(require('./config'));
+    app.load(require('./config'));
+
+    // 填充同步的存储数据
+    require('saber-storage').fill(app);
 
     var config = {
-            root: firework.getSyncData('root'),
+            root: app.getSyncData('root'),
             // 加载公共模版
             template: require('./common/common.tpl'),
 
@@ -56,7 +59,7 @@ define(function (require) {
     return {
         init: function (data) {
             config.templateData = data;
-            firework.start('viewport', config);
+            app.start('viewport', config);
         }
     };
 

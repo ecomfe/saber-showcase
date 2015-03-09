@@ -24,15 +24,6 @@ app.load(routeInfo);
 
 app.setSyncData('root', config.root);
 
-app.after(function (req, res, next) {
-    // 是否启动SPA模式
-    // TODO
-    // 根据访客终端来判断是否启用SPA模式
-    res.templateData.isSPA = false;
-    res.templateData.presenter = routeInfo[res.routeIndex].action;
-    next();
-});
-
 var options = {
 
     basePath: path.resolve(__dirname, 'lib'),

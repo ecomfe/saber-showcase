@@ -44,7 +44,7 @@
     },
     "dependencies": {
         "edp-provider-rider": "~0.4.2",
-        "rebas": "~0.4.0-alpha.3",
+        "rebas": "~0.4.0-alpha.4",
         "rider-ui": "~0.1.1",
         "saber-ajax": "~2.0.0-alpha.2",
         "saber-lang": "~2.0.0-alpha.1",

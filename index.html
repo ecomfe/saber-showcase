@@ -112,9 +112,15 @@
     </div>
 
     <script>
+        <!-- if: ${isSPA} -->
         require(['app'], function (app) {
             app.init();
         });
+        <!-- else -->
+        require(['boot', '${presenter}'], function (boot, presenter) {
+            boot(presenter);
+        });
+        <!-- /if -->
     </script>
 </body>
 </html>

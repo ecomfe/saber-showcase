@@ -2,5 +2,5 @@
     "port": 8000,
     "remote": "http://127.0.0.1:8848/api",
     "staticRoot": "http://local:8848",
-    "root": "/startup"
+    "root": ""
 }

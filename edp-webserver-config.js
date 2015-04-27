@@ -57,13 +57,8 @@ exports.getLocations = function () {
             ]
         },
         {
-            location: /^\/startup\//,
+            location: /^\/[^.]*$/,
             handler: [
-                function (context) {
-                    var url = context.request.url;
-                    context.request.url = url.replace('/startup/', '/');
-                    delete context.request.headers.host;
-                },
                 proxy('127.0.0.1', '8000')
             ]
         },

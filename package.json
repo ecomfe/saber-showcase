@@ -1,6 +1,6 @@
 {
     "name": "saber-showcase",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "saber 的演示项目",
     "maintainers": [
         {
@@ -16,22 +16,23 @@
     ],
     "edp": {
         "dependencies": {
-            "saber-firework": "~2.0.0-alpha.1",
+            "saber-firework": "~2.0.0-beta.1",
             "etpl": "~3.0.0",
             "saber-viewport": "~1.1.0",
-            "saber-lang": "~2.0.0-alpha.1",
+            "saber-lang": "~2.0.0-beta.1",
             "saber-dom": "~1.0.0",
-            "saber-promise": "~2.0.0-alpha.2",
+            "saber-promise": "~2.0.0-beta.1",
             "saber-run": "~1.0.0",
-            "saber-emitter": "~2.0.0-alpha.1",
-            "saber-router": "~2.0.0-alpha.1",
-            "saber-uri": "~1.0.4",
+            "saber-emitter": "~2.0.0-beta.1",
+            "saber-router": "~2.0.0-beta.1",
+            "saber-uri": "~1.0.6",
             "saber-tap": "~1.0.0",
-            "saber-ajax": "~2.0.0-alpha.2",
-            "saber-storage": "~2.0.0-alpha.1",
+            "saber-ajax": "~2.0.0-beta.1",
+            "saber-storage": "~2.0.0-beta.1",
             "saber-string": "~1.0.0",
             "saber-widget": "~1.0.0",
-            "saber-mm": "~0.2.0"
+            "saber-mm": "~0.5.0",
+            "saber-rainbow": "~0.1.0"
         },
         "wwwroot": "/",
         "depDir": "dep",
@@ -44,13 +45,13 @@
     },
     "dependencies": {
         "edp-provider-rider": "~0.4.2",
-        "rebas": "~0.4.0-alpha.4",
+        "rebas": "~0.4.0-beta.1",
         "rider-ui": "~0.1.1",
-        "saber-ajax": "~2.0.0-alpha.2",
-        "saber-lang": "~2.0.0-alpha.1",
-        "saber-mm": "^0.2.0",
-        "saber-promise": "~2.0.0-alpha.2",
-        "saber-storage": "~2.0.0-alpha.1"
+        "saber-ajax": "~2.0.0-beta.1",
+        "saber-lang": "~2.0.0-beta.1",
+        "saber-mm": "^0.4.0",
+        "saber-promise": "~2.0.0-beta.1",
+        "saber-storage": "~2.0.0-beta.1"
     },
     "license": "MIT",
     "repository": "git://github.com/ecomfe/saber-showcase.git",

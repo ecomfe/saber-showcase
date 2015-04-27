@@ -29,7 +29,7 @@ define(function (require) {
     app.load(require('./config'));
 
     // 填充同步的存储数据
-    require('saber-storage').fill(app);
+    require('saber-storage').sync(app);
 
     var config = {
             root: app.getSyncData('root'),

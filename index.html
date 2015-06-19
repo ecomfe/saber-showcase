@@ -9,27 +9,27 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="stylesheet" href="${config.staticRoot}/src/common/app.css">
+    <link rel="stylesheet" href="${config.staticRoot}/common/app.css">
     <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-0-6/esl.js"></script>
 
     <script>
     require.config({
-        'baseUrl': '${config.staticRoot}/src',
+        'baseUrl': '${config.staticRoot}',
         'paths': {},
         'packages': [
             {
                 'name': 'etpl',
-                'location': '../dep/etpl/3.0.0/src',
+                'location': '../dep/etpl/3.0.1/src',
                 'main': 'main'
             },
             {
                 'name': 'saber-mm',
-                'location': '../dep/saber-mm/0.4.0/src',
+                'location': '../dep/saber-mm/1.0.0/src',
                 'main': 'main'
             },
             {
                 'name': 'saber-ajax',
-                'location': '../dep/saber-ajax/2.0.0-beta.1/src',
+                'location': '../dep/saber-ajax/2.0.0/src',
                 'main': 'main'
             },
             {
@@ -39,27 +39,27 @@
             },
             {
                 'name': 'saber-emitter',
-                'location': '../dep/saber-emitter/2.0.0-beta.1/src',
+                'location': '../dep/saber-emitter/2.0.0/src',
                 'main': 'emitter'
             },
             {
                 'name': 'saber-firework',
-                'location': '../dep/saber-firework/2.0.0-beta.1/src',
+                'location': '../dep/saber-firework/2.0.0/src',
                 'main': 'main'
             },
             {
                 'name': 'saber-lang',
-                'location': '../dep/saber-lang/2.0.0-beta.1/src',
+                'location': '../dep/saber-lang/2.0.0/src',
                 'main': 'main'
             },
             {
                 'name': 'saber-promise',
-                'location': '../dep/saber-promise/2.0.0-beta.1/src',
+                'location': '../dep/saber-promise/2.0.0/src',
                 'main': 'promise'
             },
             {
                 'name': 'saber-router',
-                'location': '../dep/saber-router/2.0.0-beta.1/src',
+                'location': '../dep/saber-router/2.0.0/src',
                 'main': 'main'
             },
             {
@@ -69,7 +69,7 @@
             },
             {
                 'name': 'saber-storage',
-                'location': '../dep/saber-storage/2.0.0-beta.1/src',
+                'location': '../dep/saber-storage/2.0.0/src',
                 'main': 'main'
             },
             {
@@ -99,8 +99,13 @@
             },
             {
                 'name': 'saber-rainbow',
-                'location': '../dep/saber-rainbow/0.1.0/src',
+                'location': '../dep/saber-rainbow/0.4.0/src',
                 'main': 'main'
+            },
+            {
+                'name': 'fastclick',
+                'location': '../dep/fastclick/1.0.6/src',
+                'main': 'fastclick'
             }
         ]
     });
@@ -119,7 +124,7 @@
         });
         <!-- else -->
         require(['boot', '${presenter}'], function (boot, presenter) {
-            boot(presenter);
+            boot(presenter, '${routePath}');
         });
         <!-- /if -->
     </script>

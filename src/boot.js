@@ -19,14 +19,14 @@ define(function (require) {
     Resolver.disableExceptionCapture();
 
     // 填充同步的存储数据
-    require('saber-storage').fill(app);
+    require('saber-storage').sync(app);
 
     app.config({
         isomorphic: true,
         template: require('./common/common.tpl')
     });
 
-    return function (config) {
-        app.boot(config);
+    return function (config, path) {
+        app.boot(config, path);
     }
 });

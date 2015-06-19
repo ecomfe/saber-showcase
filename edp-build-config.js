@@ -78,12 +78,9 @@ exports.getProcessors = function () {
     var jsProcessor = new JsCompressor();
     var pathMapperProcessor = new PathMapper();
     var html2jsPorcessor = new Html2JsCompiler({
+            files: 'src/**/*.tpl',
             extnames: 'tpl',
             combine: true
-        });
-    var html2jsClearPorcessor = new Html2JsCompiler({
-            extnames: 'tpl',
-            clean: true
         });
     var stylusProcessor = new StylusCompiler({
             stylus: epr.stylus,

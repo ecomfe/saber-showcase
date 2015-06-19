@@ -28,8 +28,10 @@ app.after(function (req, res, next) {
     // 是否启动SPA模式
     // TODO
     // 根据访客终端来判断是否启用SPA模式
-    res.templateData.isSPA = true;
-    res.templateData.presenter = routeInfo[res.routeIndex].action;
+    var route = routeInfo[res.routeIndex];
+    res.templateData.isSPA = false;
+    res.templateData.presenter = route.action;
+    res.templateData.routePath = route.path;
     next();
 });
 

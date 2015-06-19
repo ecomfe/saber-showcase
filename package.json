@@ -16,42 +16,42 @@
     ],
     "edp": {
         "dependencies": {
-            "saber-firework": "~2.0.0-beta.1",
+            "saber-firework": "~2.0.0",
             "etpl": "~3.0.0",
             "saber-viewport": "~1.1.0",
-            "saber-lang": "~2.0.0-beta.1",
+            "saber-lang": "~2.0.0",
             "saber-dom": "~1.0.0",
-            "saber-promise": "~2.0.0-beta.1",
+            "saber-promise": "~2.0.0",
             "saber-run": "~1.0.0",
-            "saber-emitter": "~2.0.0-beta.1",
-            "saber-router": "~2.0.0-beta.1",
+            "saber-emitter": "~2.0.0",
+            "saber-router": "~2.0.0",
             "saber-uri": "~1.0.6",
-            "saber-tap": "~1.0.0",
-            "saber-ajax": "~2.0.0-beta.1",
-            "saber-storage": "~2.0.0-beta.1",
+            "saber-ajax": "~2.0.0",
+            "saber-storage": "~2.0.0",
             "saber-string": "~1.0.0",
             "saber-widget": "~1.0.0",
-            "saber-mm": "~0.5.0",
-            "saber-rainbow": "~0.1.0"
+            "saber-mm": "~1.0.0",
+            "saber-rainbow": "~0.4.0",
+            "fastclick": "~1.0.6"
         },
         "wwwroot": "/",
         "depDir": "dep",
         "srcDir": "src",
         "loaderAutoConfig": "js,htm,html,tpl,vm,phtml",
-        "loaderUrl": "http://s1.bdstatic.com/r/www/cache/ecom/esl/1-6-10/esl.js",
+        "loaderUrl": "http://s1.bdstatic.com/r/www/cache/ecom/esl/2-0-6/esl.js",
         "mobile": {
-            "theme": "spa"
+            "theme": "iso"
         }
     },
     "dependencies": {
-        "edp-provider-rider": "~0.4.2",
-        "rebas": "~0.4.0-beta.1",
-        "rider-ui": "~0.1.1",
-        "saber-ajax": "~2.0.0-beta.1",
-        "saber-lang": "~2.0.0-beta.1",
-        "saber-mm": "^0.4.0",
-        "saber-promise": "~2.0.0-beta.1",
-        "saber-storage": "~2.0.0-beta.1"
+        "edp-provider-rider": "^0.4.2",
+        "rebas": "0.x",
+        "rider-ui": "^0.1.1",
+        "saber-ajax": "^2.0.0",
+        "saber-lang": "^2.0.0",
+        "saber-mm": "^1.0.0",
+        "saber-promise": "^2.0.0",
+        "saber-storage": "^2.0.0"
     },
     "license": "MIT",
     "repository": "git://github.com/ecomfe/saber-showcase.git",

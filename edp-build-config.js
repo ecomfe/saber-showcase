@@ -64,7 +64,12 @@ exports.exclude = [
     '.DS_Store',
     '*.tmp',
     '*.bak',
-    '*.swp'
+    '.*.swp',
+
+    /^app.js$/,
+    /^index.html$/,
+    /^log\//,
+    /^config[\-a-zA-Z]*\//
 ];
 
 /**
@@ -77,11 +82,6 @@ exports.getProcessors = function () {
     var moduleProcessor = new ModuleCompiler();
     var jsProcessor = new JsCompressor();
     var pathMapperProcessor = new PathMapper();
-    var html2jsPorcessor = new Html2JsCompiler({
-            files: 'src/**/*.tpl',
-            extnames: 'tpl',
-            combine: true
-        });
     var stylusProcessor = new StylusCompiler({
             stylus: epr.stylus,
             compileOptions: {
@@ -91,14 +91,12 @@ exports.getProcessors = function () {
                 'src/common/app.styl'
             ]
         });
-    // var addCopyright = new AddCopyright();
 
     return [
         stylusProcessor,
         cssProcessor,
         transfer.builder(),
-        //moduleProcessor,
-        transfer.builder({clear: true}),
+        moduleProcessor,
         jsProcessor,
         pathMapperProcessor
     ];

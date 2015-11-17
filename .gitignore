@@ -1,6 +1,7 @@
 node_modules/
 output/
 dep/
+log
 .idea/
 .DS_Store
 *.log

@@ -7,7 +7,7 @@ define(function (require) {
 
     var config = {};
 
-    config.constructor = require('./Action');
+    config.constructor = require('./Presenter');
 
     config.model = require('./newModel');
 

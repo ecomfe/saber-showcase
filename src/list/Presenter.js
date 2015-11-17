@@ -1,5 +1,5 @@
 /**
- * @file list列表Action基类
+ * @file list 列表 Presenter 基类
  * @author saber team
  */
 
@@ -8,7 +8,7 @@ define(function (require) {
     var extend = require('saber-lang/extend');
     var bind = require('saber-lang/bind');
     var inherits = require('saber-lang/inherits');
-    var BaseAction = require('saber-firework/Action');
+    var Base = require('saber-mm/Presenter');
 
     var events = {
         'view:more': function () {
@@ -17,16 +17,16 @@ define(function (require) {
         }
     };
 
-    function Action(options) {
+    function Presenter(options) {
         options = options || {};
         extend(events, options.events || {});
         options.events = events;
 
-        BaseAction.call(this, options);
+        Base.call(this, options);
     }
 
-    inherits(Action, BaseAction);
+    inherits(Presenter, Base);
 
-    return Action;
+    return Presenter;
 
 });

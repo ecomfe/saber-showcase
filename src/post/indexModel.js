@@ -6,7 +6,7 @@
 define(function (require) {
 
     var Resolver = require('saber-promise');
-    var ajax = require('saber-ajax/ejson');
+    var ajax = require('saber-ajax').ejson;
 
     var URL = '/post/';
 

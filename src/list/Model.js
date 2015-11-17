@@ -7,8 +7,8 @@ define(function (require) {
 
     var inherits = require('saber-lang/inherits');
     var Resolver = require('saber-promise');
-    var ajax = require('saber-ajax/ejson');
-    var BaseModel = require('saber-firework/Model');
+    var ajax = require('saber-ajax').ejson;
+    var Base = require('saber-mm/Model');
     var Storage = require('saber-storage');
 
     var KEY_READED = 'readlist';
@@ -37,10 +37,10 @@ define(function (require) {
     function Model(options) {
         this.data = [];
 
-        BaseModel.call(this, options);
+        Base.call(this, options);
     }
 
-    inherits(Model, BaseModel);
+    inherits(Model, Base);
 
     Model.prototype.fetch = function (query) {
         var me = this;

@@ -8,7 +8,7 @@ define(function (require) {
     var extend = require('saber-lang/extend');
     var inherits = require('saber-lang/inherits');
     var dom = require('saber-dom');
-    var BaseView = require('saber-firework/View');
+    var Base = require('saber-mm/View');
 
     var domEvents = {
         'click: .news-list-more': function (ele) {
@@ -24,10 +24,10 @@ define(function (require) {
         extend(domEvents, options.domEvents || {});
         options.domEvents = domEvents;
 
-        BaseView.call(this, options);
+        Base.call(this, options);
     }
 
-    inherits(View, BaseView);
+    inherits(View, Base);
 
     View.prototype.add = function (data) {
         var moreBtn = this.query('.news-list-more');

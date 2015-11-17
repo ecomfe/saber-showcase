@@ -1,0 +1,6 @@
+{
+    "port": 8000,
+    "remote": "http://127.0.0.1:8848/api",
+    "staticRoot": "http://127.0.0.1:8848/src",
+    "root": ""
+}

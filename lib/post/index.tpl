@@ -1,4 +1,4 @@
-<!-- use: mainHeader(pageTitle='Comments', showBack=true) -->
+<!-- use: mainHeader(pageTitle='Comments', showBack=true, config=${config}) -->
 <div class="post-container">
     <div class="post-detail">
 

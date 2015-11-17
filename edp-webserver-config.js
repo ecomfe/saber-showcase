@@ -3,8 +3,11 @@
  * @author edpx-mobile
  */
 
+
 // 引入 rider 支持
 var epr = require('./edp-rider-config');
+
+var transfer = require('rebas-transfer');
 
 // 指定匹配版本的 stylus
 exports.stylus = epr.stylus;
@@ -34,16 +37,6 @@ exports.directoryIndexes = true;
 exports.getLocations = function () {
     return [
         {
-            location: '/',
-            handler: [
-                home('index.html'),
-                // 推荐使用 Chrome 开发者工具调试页面
-                // 如需单独调试 Android 4.4- 设备，可启用 Weinre 相关配置
-                // weinre({port: 8889}),
-                livereload()
-            ]
-        },
-        {
             location: /^[^\?]+?\.css($|\?)/,
             handler: [
                 autostylus({
@@ -53,33 +46,27 @@ exports.getLocations = function () {
             ]
         },
         {
-            location: /^[^\?]+?\.tpl\.js($|\?)/,
-            handler: [
-                html2js()
-            ]
-        },
-        {
-            location: /^\/(feed|post)\/*/,
+            location: /^\/api\/*/,
             handler: [
                 function (context) {
+                    var url = context.request.url;
+                    context.request.url = url.replace('/api/', '/');
                     delete context.request.headers.host;
                 },
                 proxy('startupnews.treelite.me')
             ]
         },
         {
-            location: /\.md($|\?)/,
+            location: /^\/[^.]*$/,
             handler: [
-                markdown()
+                proxy('127.0.0.1', '8000')
             ]
         },
         {
             location: /^.*$/,
             handler: [
                 file(),
-                // weinre({port: 8889}),
-                livereload(),
-                proxyNoneExists()
+                transfer.server()
             ]
         }
     ];

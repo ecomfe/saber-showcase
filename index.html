@@ -9,12 +9,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="stylesheet" href="src/common/app.css">
+    <link rel="stylesheet" href="${config.staticRoot}/common/app.css">
     <script src="http://s1.bdstatic.com/r/www/cache/ecom/esl/2-0-8/esl.js"></script>
 
     <script>
     require.config({
-        'baseUrl': 'src',
+        'baseUrl': '${config.staticRoot}',
         'paths': {},
         'packages': [
             {
@@ -23,9 +23,14 @@
                 'main': 'main'
             },
             {
+                'name': 'fastclick',
+                'location': '../dep/fastclick/1.0.6/src',
+                'main': 'fastclick'
+            },
+            {
                 'name': 'saber-ajax',
-                'location': '../dep/saber-ajax/1.0.0/src',
-                'main': 'ajax'
+                'location': '../dep/saber-ajax/2.1.0/src',
+                'main': 'main'
             },
             {
                 'name': 'saber-dom',
@@ -34,27 +39,37 @@
             },
             {
                 'name': 'saber-emitter',
-                'location': '../dep/saber-emitter/1.0.0/src',
+                'location': '../dep/saber-emitter/2.0.0/src',
                 'main': 'emitter'
             },
             {
                 'name': 'saber-firework',
-                'location': '../dep/saber-firework/1.0.0/src',
+                'location': '../dep/saber-firework/2.0.0/src',
                 'main': 'main'
             },
             {
                 'name': 'saber-lang',
-                'location': '../dep/saber-lang/1.0.2/src',
+                'location': '../dep/saber-lang/2.0.1/src',
+                'main': 'main'
+            },
+            {
+                'name': 'saber-mm',
+                'location': '../dep/saber-mm/1.0.1/src',
                 'main': 'main'
             },
             {
                 'name': 'saber-promise',
-                'location': '../dep/saber-promise/1.0.2/src',
+                'location': '../dep/saber-promise/2.0.0/src',
                 'main': 'promise'
             },
             {
+                'name': 'saber-rainbow',
+                'location': '../dep/saber-rainbow/0.4.0/src',
+                'main': 'main'
+            },
+            {
                 'name': 'saber-router',
-                'location': '../dep/saber-router/1.0.0/src',
+                'location': '../dep/saber-router/2.0.0/src',
                 'main': 'main'
             },
             {
@@ -64,18 +79,13 @@
             },
             {
                 'name': 'saber-storage',
-                'location': '../dep/saber-storage/1.0.0/src',
-                'main': 'storage'
+                'location': '../dep/saber-storage/2.0.0/src',
+                'main': 'main'
             },
             {
                 'name': 'saber-string',
                 'location': '../dep/saber-string/1.0.0/src',
                 'main': 'main'
-            },
-            {
-                'name': 'saber-tap',
-                'location': '../dep/saber-tap/1.0.0/src',
-                'main': 'tap'
             },
             {
                 'name': 'saber-uri',
@@ -95,20 +105,23 @@
         ]
     });
     </script>
-
-    <!-- lightApp -->
-    <script type="text/javascript" name="baidu-tc-cerfication" src="http://apps.bdimg.com/cloudaapi/lightapp.js#1248a677e60dfc7cb37f409fc82efdfe"></script>
-    <script type="text/javascript">window.bd && bd._qdc && bd._qdc.init({'app_id': '2cd6f2423f95bd187afb3a0c'});</script>
 </head>
 
 <body>
-    <div id="splash-screen"></div>
-    <div id="viewport"></div>
+    <div id="viewport">
+    ${content}
+    </div>
 
     <script>
+        <!-- if: ${isSPA} -->
         require(['app'], function (app) {
             app.init();
         });
+        <!-- else -->
+        require(['boot', '${presenter}'], function (boot, presenter) {
+            boot(presenter, '${routePath}');
+        });
+        <!-- /if -->
     </script>
 </body>
 </html>

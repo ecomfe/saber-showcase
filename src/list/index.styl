@@ -65,12 +65,11 @@
     line-height: 3.6rem
     background: #f7f7f7
     color: #666
-    position: relative
     &.loading:after
         @extends .icon-rotate-right:before
         @extends $-font-icon-base
-        absolute: 0 15px _ _
-        display: block
+        display: inline-block
         animation: rotate 1s linear infinite
         vertical-align: middle
+        padding-left: 2px
         margin-left: 5px

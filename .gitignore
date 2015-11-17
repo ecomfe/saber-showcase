@@ -4,5 +4,6 @@ dep/
 log
 .idea/
 .DS_Store
+log
 *.log
 *.swp

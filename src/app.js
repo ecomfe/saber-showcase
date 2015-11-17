@@ -7,7 +7,16 @@ define(function (require) {
 
     var dom = require('saber-dom');
     var Resolver = require('saber-promise');
-    var firework = require('saber-firework');
+    var app = require('saber-firework');
+
+    var ajax = require('saber-ajax').ejson;
+    // 设置所有异步请求的URL前缀
+    ajax.config({
+        host: '/api'
+    });
+
+    // 启用同构模式
+    require('saber-firework/extension/isomorphic');
 
     // 使用slide转场效果
     var slide = require('saber-viewport/transition/slide');
@@ -17,14 +26,13 @@ define(function (require) {
     Resolver.disableExceptionCapture();
 
     // 加载路由配置信息
-    firework.load(require('./config'));
+    app.load(require('./config'));
 
-    // 完成页面加载后隐藏splash
-    firework.on('afterload', function () {
-        dom.hide(dom.g('splash-screen'));
-    });
+    // 填充同步的存储数据
+    require('saber-storage').sync(app);
 
     var config = {
+            root: app.getSyncData('root'),
             // 加载公共模版
             template: require('./common/common.tpl'),
 
@@ -49,8 +57,9 @@ define(function (require) {
         };
 
     return {
-        init: function () {
-            firework.start('viewport', config);
+        init: function (data) {
+            config.templateData = data;
+            app.start('viewport', config);
         }
     };
 

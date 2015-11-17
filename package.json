@@ -1,6 +1,6 @@
 {
     "name": "saber-showcase",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "saber 的演示项目",
     "maintainers": [
         {
@@ -16,36 +16,48 @@
     ],
     "edp": {
         "dependencies": {
-            "saber-firework": "^1.0.0",
+            "saber-firework": "^2.0.0",
             "etpl": "^3.0.0",
-            "saber-viewport": "^1.0.0",
-            "saber-lang": "^1.0.0",
+            "saber-viewport": "^1.1.0",
+            "saber-lang": "^2.0.0",
             "saber-dom": "^1.0.0",
-            "saber-promise": "^1.0.0",
+            "saber-promise": "~2.0.0",
             "saber-run": "^1.0.0",
-            "saber-emitter": "^1.0.0",
-            "saber-router": "^1.0.0",
-            "saber-uri": "^1.0.0",
-            "saber-ajax": "^1.0.0",
-            "saber-storage": "^1.0.0",
+            "saber-emitter": "^2.0.0",
+            "saber-router": "^2.0.0",
+            "saber-uri": "^1.0.6",
+            "saber-ajax": "^2.0.0",
+            "saber-storage": "^2.0.0",
             "saber-string": "^1.0.0",
             "saber-widget": "^1.0.0",
-            "saber-tap": "^1.0.0"
+            "saber-mm": "^1.0.0",
+            "saber-rainbow": "^0.4.0",
+            "fastclick": "^1.0.6",
+            "saber-tap": "~1.0.0"
         },
         "wwwroot": "/",
         "depDir": "dep",
-        "srcDir": "src",
+        "srcDir": "${config.staticRoot}",
         "loaderAutoConfig": "js,htm,html,tpl,vm,phtml",
         "loaderUrl": "http://s1.bdstatic.com/r/www/cache/ecom/esl/2-0-8/esl.js",
         "mobile": {
-            "theme": "spa"
+            "theme": "iso"
         }
     },
     "dependencies": {
-        "edp-provider-rider": "~0.4.2",
-        "rider-ui": "~0.1.1"
+        "edp-provider-rider": "^2.0.0",
+        "rebas": "0.x",
+        "rider-ui": "^0.1.1",
+        "saber-ajax": "^2.0.0",
+        "saber-lang": "^2.0.0",
+        "saber-mm": "^1.0.0",
+        "saber-promise": "^2.0.0",
+        "saber-storage": "^2.0.0"
     },
     "license": "MIT",
     "repository": "git://github.com/ecomfe/saber-showcase.git",
-    "bugs": "https://github.com/ecomfe/edp-showcase/issues"
+    "bugs": "https://github.com/ecomfe/edp-showcase/issues",
+    "devDependencies": {
+        "rebas-transfer": "^0.4.0-alpha.1"
+    }
 }

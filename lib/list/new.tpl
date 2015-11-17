@@ -1,4 +1,4 @@
-<!-- use: mainHeader(pageName='list_new', showNav=true) -->
+<!-- use: mainHeader(pageName='list_new', showNav=true, config=${config}) -->
 <div class="news-container">
 
     <div class="news-list">

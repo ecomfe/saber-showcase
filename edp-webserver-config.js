@@ -64,7 +64,7 @@ exports.getLocations = function () {
                 function (context) {
                     delete context.request.headers.host;
                 },
-                proxy('startupnews.duapp.com')
+                proxy('startupnews.treelite.me')
             ]
         },
         {

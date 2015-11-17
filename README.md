@@ -21,4 +21,4 @@ saber-showcase
 
 ## 需要非同构化版本？
 
-我们还有使用 [**Saber**](http://ecomfe.github.io/saber) 构建的 SPA 模式，实例在这里
+我们还有使用 [**saber**](http://ecomfe.github.io/saber) 构建的纯前端 SPA [示例](https://github.com/ecomfe/saber-showcase/tree/2.0/spa)
